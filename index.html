@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DurianBoy Jeff</title>
+  <meta name="description" content="DurianBoy Jeff — fresh, flavorful durians delivered daily. Musang King, Black Thorn, D24 XO, Udang Merah, Tekka, Horloh. Pickup only for now; delivery coming soon. Taiping, Perak." />
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --green:#0f5132; --lime:#cfe9a8; --gold:#f1c40f; --cream:#fffdf5; --ink:#1b1b1b; --muted:#6b7280; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji; color:var(--ink); background:var(--cream)}
+    a{color:var(--green);text-decoration:none}
+    a:hover{opacity:.9}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:var(--green);color:#fff;font-weight:700;transition:.2s;text-align:center}
+    .btn.alt{background:var(--gold);color:#1b1b1b}
+    .btn:hover{transform:translateY(-1px)}
+
+    header{position:sticky;top:0;z-index:50;background:#ffffffdd;backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid #eee;padding:0 24px}
+    header .bar{display:flex;align-items:center;justify-content:space-between;padding:10px 0;position:relative}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand img{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#fff}
+
+    /* keep toggle at right */
+    header .bar > .brand{order:1}
+    header .bar > nav{order:2;margin-left:auto}
+    header .bar > .nav-toggle{order:3}
+
+    /* desktop nav */
+    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+    nav li{position:relative;padding:0 10px}
+    nav li:not(:last-child)::after{content:"|";position:absolute;right:-10px;top:0;color:#ccc;font-weight:400}
+    nav a{font-weight:600;color:#111;transition:.2s}
+    nav a:hover{color:var(--green)}
+
+    .nav-toggle{display:none;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #e5e7eb;border-radius:10px;background:#fff;margin-left:8px}
+    .nav-toggle svg{width:20px;height:20px}
+
+    .hero{position:relative;padding:0 24px}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:60px 0}
+    .tag{display:inline-flex;gap:8px;align-items:center;background:var(--lime);color:var(--green);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;letter-spacing:.2px}
+    .headline{font-size:44px;line-height:1.1;margin:12px 0 10px}
+    .sub{color:var(--muted);font-size:18px;margin:0 0 18px}
+    .hero .img{position:relative;min-height:280px;border-radius:20px;background:#e8f3d9 url('assets/hero-durian.jpg') center/cover no-repeat;border:1px solid #e5e7eb}
+
+    .btn-container{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;}
+
+    section{padding:60px 24px}
+    h2{font-size:32px;margin:0 0 14px}
+    .lead{color:var(--muted)}
+
+    .about{background:#fff;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:60px 24px}
+    .about .bgpic{position:relative;border-radius:18px;overflow:hidden;height:220px;background:#dbeafe url('assets/about-bg.jpg') center/cover no-repeat;border:1px solid #e5e7eb}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+    .card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid #eee}
+    .card .pill{display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:6px 12px;font-size:15px;font-weight:600;color:#374151;background:#fafafa}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .feat{padding:18px;border:1px solid #e5e7eb;border-radius:14px;background:#fff}
+    .feat h3{margin:0 0 6px;font-size:18px}
+
+    .delivery, .pickup{background:linear-gradient(180deg,#ffffff 0,#f9fef3 100%);border-top:1px solid #eee;border-bottom:1px solid #eee;padding:60px 24px}
+
+    .contact{padding:60px 24px}
+    .contact .grid{grid-template-columns:1.2fr .8fr}
+    .contact .card p{margin:8px 0}
+
+    footer{padding:26px 24px;color:#6b7280;border-top:1px solid #eee}
+
+    .qr{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .qr img{width:100%;border-radius:12px;border:1px solid #e5e7eb;object-fit:contain;background:#fff;padding:8px}
+    .qr .label{margin-top:6px;text-align:center;font-size:12px;color:#64748b}
+
+    /* iPad Air / medium tablets: 2 columns */
+    @media (min-width: 700px) and (max-width: 900px){
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+
+    /* iPad Air — use mobile-style dropdown AND hide desktop separators */
+    @media (min-width: 700px) and (max-width: 900px){
+      .nav-toggle{display:inline-flex;}
+      nav{position:static;}
+
+      nav ul{
+        display:none; position:absolute; left:24px; right:24px; top:56px;
+        background:#ffffff; border:1px solid #eee; padding:14px 20px;
+        flex-direction:column; gap:8px; border-radius:12px;
+        box-shadow:0 10px 30px rgba(0,0,0,.08);
+      }
+      nav.open ul{display:flex;}
+
+      /* Hide the desktop '|' separators and reset item styles */
+      nav li{padding:0;}
+      nav li::after{display:none;}            /* <-- this removes the right-side line */
+      nav a{display:block;padding:10px 12px;border-radius:10px;}
+      nav a:active{background:#f1f5f9;}
+    }
+
+    /* Mobile */
+    @media (max-width: 699px){
+      header{padding:0 24px}
+      .nav-toggle{display:inline-flex}
+      nav{position:static}
+      /* dropdown panel only (no full-screen cover) */
+      nav ul{
+        display:none; position:absolute; left:24px; right:24px; top:56px;
+        background:#ffffff; border:1px solid #eee; padding:14px 20px;
+        flex-direction:column; gap:8px; border-radius:12px;
+        box-shadow:0 10px 30px rgba(0,0,0,.08);
+      }
+      nav.open ul{display:flex}
+      nav li{padding:0}
+      nav li::after{display:none}
+      nav a{display:block;padding:10px 12px;border-radius:10px}
+      nav a:active{background:#f1f5f9}
+
+      .hero .wrap{grid-template-columns:1fr;gap:18px;text-align:center;justify-items:center}
+      .hero .img{margin:0 auto;width:90%}
+      .btn-container{justify-content:center;}
+      .grid{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      .contact .grid{grid-template-columns:1fr}
+      .headline{font-size:36px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <div class="brand">
+        <img src="assets/logo.png" alt="DurianBoy Jeff logo" />
+        <span>DurianBoy Jeff</span>
+      </div>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#varieties">Varieties</a></li>
+          <li><a href="#why">Why Durians</a></li>
+          <li><a href="#guarantee">Fresh Guarantee</a></li>
+          <li><a href="#delivery">Pickup</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container wrap">
+        <div>
+          <span class="tag">Fresh Daily • Farm-to-Table</span>
+          <h1 class="headline">The Kingdom of Durians, served fresh in Taiping</h1>
+          <p class="sub">Picked at peak ripeness and delivered daily for maximum freshness. Musang King, Black Thorn, D24 XO, Red Prawn, Tekka, Horloh and more.</p>
+          <div class="btn-container">
+            <a class="btn" href="#varieties">Browse Varieties</a>
+            <a class="btn alt" href="#contact">Contact Us</a>
+          </div>
+        </div>
+        <div class="img" role="img" aria-label="Durian display"></div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container" style="display:grid; gap:18px">
+        <div class="bgpic" aria-hidden="true" style="background-image:url('assets/about-bg.jpg')"></div>
+        <div>
+          <h2>About Us</h2>
+          <p class="lead"><strong>At DurianBoy Jeff</strong>, we believe durians should be enjoyed the way nature intended, <em>fresh</em>, <em>flavorful</em>, and <em>straight from the farm</em>. That’s why we bring you the best durians, picked at their peak and delivered daily for maximum freshness.</p>
+          <p class="lead">We’re passionate about giving our customers a <strong>true farm-to-table experience</strong>, so every durian you taste is as authentic and delicious as it gets. With a wide selection of varieties to choose from, there’s always something new to discover, whether you’re a durian enthusiast or trying it for the first time.</p>
+          <p class="lead"><strong>Freshness. Variety. Quality.</strong> That’s what we stand for.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="varieties">
+      <div class="container">
+        <h2>Durian Varieties</h2>
+        <p class="lead">Our most popular selections. Prices vary by season. Contact us for today’s rate.</p>
+        <div class="grid" style="margin-top:16px">
+          <article class="card"><img src="assets/musang-king.png" alt="Musang King D197" /><div class="pill">D197 • Musang King</div><p>Yellow, creamy flesh with a rich sweetness that finishes with a pleasant, subtle bitterness.</p></article>
+          <article class="card"><img src="assets/black-thorn.png" alt="Black Thorn D200" /><div class="pill">D200 • Black Thorn</div><p>Thick, creamy texture with a gentle <em>wine-like</em> (fermented) note and striking orange flesh.</p></article>
+          <article class="card"><img src="assets/d24-xo.jpg" alt="D24 XO" /><div class="pill">D24 • XO</div><p>Classic D24 profile with a pronounced bitter edge and lightly fermented character.</p></article>
+          <article class="card"><img src="assets/udang-merah.png" alt="Udang Merah D175" /><div class="pill">D175 • Udang Merah (Red Prawn)</div><p>Fibreless, creamy flesh celebrated for its rich, sweet, fruity flavour. A northern Malaysian favourite.</p></article>
+          <article class="card"><img src="assets/tekka.jpg" alt="Tekka D160" /><div class="pill">D160 • Tekka (Musang Queen)</div><p>Golden, sticky flesh with a bold bitter profile elegantly balanced by a sweet aftertaste.</p></article>
+          <article class="card"><img src="assets/horloh.jpeg" alt="Horloh D163" /><div class="pill">D163 • Horloh</div><p>Dry, sticky flesh with a slightly bitter, floral character. Bold and creamy.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="container">
+        <h2>Why Durian is the King of Fruits</h2>
+        <div class="features" style="margin-top:14px">
+          <div class="feat"><h3>Rich, Complex Flavour</h3><p>Creamy textures, balanced sweetness and a delightful aroma. Each variety offers a distinct, satisfying taste.</p></div>
+          <div class="feat"><h3>Nutrient Powerhouse</h3><p>Packed with vitamins, fiber, potassium and antioxidants. Durian is both indulgent and nourishing.</p></div>
+          <div class="feat"><h3>Cultural Pride</h3><p>Revered across Southeast Asia, durian is celebrated as a seasonal delicacy that brings families and friends together.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="delivery" id="guarantee">
+      <div class="container">
+        <h2>Fresh Guarantee</h2>
+        <p class="lead">Not satisfied with the quality? Let us know on the same day and we’ll make it right with a replacement or refund for genuine quality issues.</p>
+      </div>
+    </section>
+
+    <section class="pickup" id="delivery">
+      <div class="container">
+        <h2>Pickup & Delivery</h2>
+        <p class="lead">Currently available for <strong>self-pickup only</strong> at our stall. Delivery via Grab and Foodpanda coming soon!</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="grid" style="margin-top:10px">
+          <div class="card">
+            <p><strong>Address</strong><br>
+              <a href="https://www.google.com/maps?q=DurianBoy+Jeff,+No.5+Jalan+Panggung+Wayang,+34000+Taiping,+Perak" target="_blank" rel="noopener">
+                No. 5, Jalan Panggung Wayang, 34000 Taiping, Perak
+              </a>
+            </p>
+            <p><strong>Business Hours</strong><br>11:00 am – 10:00 pm, Everyday</p>
+            <p><strong>Phone & WhatsApp</strong><br>
+              <a href="tel:+60167327055">016-732 7055 (Jeff)</a> &nbsp;|&nbsp;
+              <a href="tel:+60124281640">012-428 1640 (Woei)</a>
+            </p>
+            <p><strong>Social Media</strong><br>
+              IG: <a href="https://instagram.com/durianboyjeff" target="_blank" rel="noopener">@durianboyjeff</a><br>
+              FB (Owner): <a href="https://www.facebook.com/wong.eujeff.3" target="_blank" rel="noopener">Jeff Wong</a><br>
+              FB (Official Page): <a href="https://www.facebook.com/profile.php?id=61577221352088" target="_blank" rel="noopener">DurianBoy Jeff</a>
+            </p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+              <a class="btn" href="#varieties">Check Today’s Picks</a>
+              <a class="btn alt" href="https://wa.me/60167327055" target="_blank" rel="noopener">WhatsApp Us</a>
+            </div>
+          </div>
+          <div>
+            <div class="qr">
+              <div>
+                <img src="assets/qr-ig.png" alt="QR code for Instagram" />
+                <div class="label">Instagram</div>
+              </div>
+              <div>
+                <img src="assets/qr-fb.png" alt="QR code for Facebook Page" />
+                <div class="label">Facebook Page</div>
+              </div>
+              <div>
+                <img src="assets/qr-wa.png" alt="QR code for WhatsApp" />
+                <div class="label">WhatsApp</div>
+              </div>
+              <div>
+                <img src="assets/qr-location.png" alt="QR code for Google Maps Location" />
+                <div class="label">Google Maps</div>
+              </div>
+            </div>
+            <p style="margin-top:10px;color:var(--muted);font-size:12px">
+              Scan to connect with us instantly. Follow, chat, or navigate to our stall!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="year"></span> DurianBoy Jeff. All rights reserved.</div>
+      <div>Taiping • Perak, Malaysia</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.querySelector('nav');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const clickInside = nav.contains(e.target) || toggle.contains(e.target);
+      if (!clickInside) {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+
+    // Smooth scroll & close menu after clicking a nav link
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'})}
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+  </script>
+</body>
+</html>
