@@ -125,7 +125,8 @@
     .nav-toggle{display:none;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #e5e7eb;border-radius:10px;background:#fff;margin-left:8px}
     .nav-toggle svg{width:20px;height:20px}
 
-    .hero{position:relative;padding:0 24px}
+    /* HERO */
+    .hero{position:relative;padding:0 24px; background:var(--cream);} /* keep hero warm */
     .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:60px 0}
     .tag{display:inline-flex;gap:8px;align-items:center;background:var(--lime);color:var(--green);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;letter-spacing:.2px}
     .headline{font-size:44px;line-height:1.1;margin:12px 0 10px}
@@ -134,11 +135,15 @@
 
     .btn-container{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;}
 
-    section{padding:60px 24px}
+    /* --- CONSISTENT SECTION RHYTHM --- */
+    section{padding:60px 24px; background: linear-gradient(180deg, #ffffff 0%, #f9fef3 100%);}          /* unify sections on white */
+    section + section{border-top:1px solid #eee;}          /* one subtle divider before each section */
+
     h2{font-size:32px;margin:0 0 14px}
     .lead{color:var(--muted)}
 
-    .about{background:#fff;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:60px 24px}
+    /* About stays white; let global divider handle the top line */
+    .about{background: linear-gradient(180deg, #ffffff 0%, #f9fef3 100%);;border-bottom:1px solid #eee;}
     .about .bgpic{position:relative;border-radius:18px;overflow:hidden;height:220px;background:#dbeafe url('assets/about-bg.jpg') center/cover no-repeat;border:1px solid #e5e7eb}
 
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -150,70 +155,152 @@
     .feat{padding:18px;border:1px solid #e5e7eb;border-radius:14px;background:#fff}
     .feat h3{margin:0 0 6px;font-size:18px}
 
-    .delivery, .pickup{background:linear-gradient(180deg,#ffffff 0,#f9fef3 100%);border-top:1px solid #eee;border-bottom:1px solid #eee;padding:60px 24px}
+    /* Keep pickup/delivery gentle gradient; avoid double-top line (global rule provides the top) */
+    .delivery, .pickup{
+      background:linear-gradient(180deg,#ffffff 0,#f9fef3 100%);
+      border-bottom:1px solid #eee;
+    }
 
-    .contact{padding:60px 24px}
+    /* ===== Reviews (Auto-scroll Carousel) ===== */
+    .reviews{background:linear-gradient(180deg,#ffffff 0,#f9fef3 100%);}
+    .reviews .rail{
+      overflow:hidden;
+      mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+    }
+    .reviews .track{
+      display:flex;
+      gap:16px;
+      width:max-content;
+      animation:scroll-x 40s linear infinite;
+    }
+    .reviews .item{
+      flex:0 0 auto;
+      width:275px;
+      max-width:85vw;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,.05);
+      overflow:hidden;
+      padding:10px;              /* 🟡 adds white border space inside */
+      box-sizing:border-box;
+    }
+    /* make sure the image fits inside neatly */
+    .reviews img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:12px;       /* 🟡 optional: soft corners */
+      background:#fff;          /* fallback white background */
+    }
+    .reviews .hint{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:10px;
+      text-align:center;
+    }
+    @keyframes scroll-x{
+      from{ transform: translateX(0); }
+      to{   transform: translateX(-50%); } /* because we duplicate set */
+    }
+    /* reduce motion preference */
+    @media (prefers-reduced-motion: reduce){
+      .reviews .track{ animation: none; }
+    }
+
+    .contact{}
     .contact .grid{grid-template-columns:1.2fr .8fr}
     .contact .card p{margin:8px 0}
 
-    footer{padding:26px 24px;color:#6b7280;border-top:1px solid #eee}
+    footer{padding:26px 24px;color:#6b7280;border-top:1px solid #eee;background: var(--cream);}
 
     .qr{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     .qr img{width:100%;border-radius:12px;border:1px solid #e5e7eb;object-fit:contain;background:#fff;padding:8px}
     .qr .label{margin-top:6px;text-align:center;font-size:12px;color:#64748b}
 
-    /* iPad Air / medium tablets: 2 columns */
-    @media (min-width: 700px) and (max-width: 900px){
-      .grid{grid-template-columns:repeat(2,1fr);}
-    }
+    /* === MOBILE + TABLET (everything below 1200px) === */
+    /* use hamburger button for nav; full nav only on laptops/desktops */
+    @media (max-width:1199px){
+      header{padding:0 24px;}
 
-    /* iPad Air — use mobile-style dropdown AND hide desktop separators */
-    @media (min-width: 700px) and (max-width: 900px){
+      /* show toggle + hide inline menu */
       .nav-toggle{display:inline-flex;}
       nav{position:static;}
-
       nav ul{
-        display:none; position:absolute; left:24px; right:24px; top:56px;
+        display:none;
+        position:absolute; left:24px; right:24px; top:56px;
         background:#ffffff; border:1px solid #eee; padding:14px 20px;
         flex-direction:column; gap:8px; border-radius:12px;
         box-shadow:0 10px 30px rgba(0,0,0,.08);
       }
       nav.open ul{display:flex;}
-
-      /* Hide the desktop '|' separators and reset item styles */
       nav li{padding:0;}
-      nav li::after{display:none;}            /* <-- this removes the right-side line */
+      nav li::after{display:none;}
       nav a{display:block;padding:10px 12px;border-radius:10px;}
       nav a:active{background:#f1f5f9;}
+
+      /* common stacking for smaller screens */
+      .hero .wrap{
+        grid-template-columns:1fr;
+        gap:18px;
+        text-align:center;
+        justify-items:center;
+      }
+      .hero .img{margin:0 auto;width:90%;}
+      .btn-container{justify-content:center;}
+      .features{grid-template-columns:1fr;}
+      .contact .grid{grid-template-columns:1fr;}
+      .headline{font-size:36px;}
     }
 
-    /* Mobile */
-    @media (max-width: 699px){
-      header{padding:0 24px}
-      .nav-toggle{display:inline-flex}
-      nav{position:static}
-      /* dropdown panel only (no full-screen cover) */
-      nav ul{
-        display:none; position:absolute; left:24px; right:24px; top:56px;
-        background:#ffffff; border:1px solid #eee; padding:14px 20px;
-        flex-direction:column; gap:8px; border-radius:12px;
-        box-shadow:0 10px 30px rgba(0,0,0,.08);
-      }
-      nav.open ul{display:flex}
-      nav li{padding:0}
-      nav li::after{display:none}
-      nav a{display:block;padding:10px 12px;border-radius:10px}
-      nav a:active{background:#f1f5f9}
+    /* === iPad Air (700–900 px): 2 columns for Durian Varieties === */
+    @media (min-width:700px) and (max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
 
-      .hero .wrap{grid-template-columns:1fr;gap:18px;text-align:center;justify-items:center}
-      .hero .img{margin:0 auto;width:90%}
-      .btn-container{justify-content:center;}
-      .grid{grid-template-columns:1fr}
-      .features{grid-template-columns:1fr}
-      .contact .grid{grid-template-columns:1fr}
-      .headline{font-size:36px}
+    /* === iPad Pro (901–1199 px): 3 columns for Durian Varieties === */
+    @media (min-width:901px) and (max-width:1199px){
+      .grid{grid-template-columns:repeat(3,1fr);}
+    }
+
+    /* === Small Mobile (<700 px): 1 column for Durian Varieties === */
+    @media (max-width:699px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    /* === HERO IMAGE BACKGROUND FIX WITH YELLOW === */
+
+    /* Desktop default */
+    .hero .img{
+      position: relative;
+      border-radius: 20px;
+      border: 1px solid #e5e7eb;
+      background: #ffe957 url('assets/hero-durian.jpg') center/cover no-repeat; /* 🔸 new yellow tone */
+    }
+
+    /* iPad Air */
+    @media (min-width:700px) and (max-width:900px){
+      .hero .img{
+        background: #ffe957 url('assets/hero-durian.jpg') center/contain no-repeat; /* full image shown */
+        aspect-ratio: 16 / 9;
+        width: 88%;
+        margin: 0 auto;
+      }
+    }
+
+    /* iPad Pro */
+    @media (min-width:901px) and (max-width:1199px){
+      .hero .img{
+        background: #ffe957 url('assets/hero-durian.jpg') center/contain no-repeat;
+        aspect-ratio: 16 / 9;
+        width: 78%;
+        margin: 0 auto;
+      }
     }
   </style>
+
 </head>
 <body>
   <header>
@@ -230,8 +317,9 @@
           <li><a href="#about">About Us</a></li>
           <li><a href="#varieties">Varieties</a></li>
           <li><a href="#why">Why Durians</a></li>
-          <li><a href="#guarantee">Fresh Guarantee</a></li>
           <li><a href="#delivery">Pickup</a></li>
+          <li><a href="#reviews">Customer Reviews</a></li>
+          <li><a href="#guarantee">Fresh Guarantee</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -271,12 +359,12 @@
         <h2>Durian Varieties</h2>
         <p class="lead">Our most popular selections. Prices vary by season. Contact us for today’s rate.</p>
         <div class="grid" style="margin-top:16px">
-          <article class="card"><img src="assets/musang-king.png" alt="Musang King D197" /><div class="pill">D197 • Musang King</div><p>Yellow, creamy flesh with a rich sweetness that finishes with a pleasant, subtle bitterness.</p></article>
-          <article class="card"><img src="assets/black-thorn.png" alt="Black Thorn D200" /><div class="pill">D200 • Black Thorn</div><p>Thick, creamy texture with a gentle <em>wine-like</em> (fermented) note and striking orange flesh.</p></article>
-          <article class="card"><img src="assets/d24-xo.jpg" alt="D24 XO" /><div class="pill">D24 • XO</div><p>Classic D24 profile with a pronounced bitter edge and lightly fermented character.</p></article>
-          <article class="card"><img src="assets/udang-merah.png" alt="Udang Merah D175" /><div class="pill">D175 • Udang Merah (Red Prawn)</div><p>Fibreless, creamy flesh celebrated for its rich, sweet, fruity flavour. A northern Malaysian favourite.</p></article>
-          <article class="card"><img src="assets/tekka.jpg" alt="Tekka D160" /><div class="pill">D160 • Tekka (Musang Queen)</div><p>Golden, sticky flesh with a bold bitter profile elegantly balanced by a sweet aftertaste.</p></article>
-          <article class="card"><img src="assets/horloh.jpeg" alt="Horloh D163" /><div class="pill">D163 • Horloh</div><p>Dry, sticky flesh with a slightly bitter, floral character. Bold and creamy.</p></article>
+          <article class="card"><img src="assets/variaties/musang-king.png" alt="Musang King D197" /><div class="pill">D197 • Musang King</div><p>Yellow, creamy flesh with a rich sweetness that finishes with a pleasant, subtle bitterness.</p></article>
+          <article class="card"><img src="assets/variaties/black-thorn.png" alt="Black Thorn D200" /><div class="pill">D200 • Black Thorn</div><p>Thick, creamy texture with a gentle <em>wine-like</em> (fermented) note and striking orange flesh.</p></article>
+          <article class="card"><img src="assets/variaties/d24-xo.jpg" alt="D24 XO" /><div class="pill">D24 • XO</div><p>Classic D24 profile with a pronounced bitter edge and lightly fermented character.</p></article>
+          <article class="card"><img src="assets/variaties/udang-merah.png" alt="Udang Merah D175" /><div class="pill">D175 • Udang Merah (Red Prawn)</div><p>Fibreless, creamy flesh celebrated for its rich, sweet, fruity flavour. A northern Malaysian favourite.</p></article>
+          <article class="card"><img src="assets/variaties/tekka.jpg" alt="Tekka D160" /><div class="pill">D160 • Tekka (Musang Queen)</div><p>Golden, sticky flesh with a bold bitter profile elegantly balanced by a sweet aftertaste.</p></article>
+          <article class="card"><img src="assets/variaties/horloh.jpeg" alt="Horloh D163" /><div class="pill">D163 • Horloh</div><p>Dry, sticky flesh with a slightly bitter, floral character. Bold and creamy.</p></article>
         </div>
       </div>
     </section>
@@ -292,17 +380,45 @@
       </div>
     </section>
 
-    <section class="delivery" id="guarantee">
-      <div class="container">
-        <h2>Fresh Guarantee</h2>
-        <p class="lead">Not satisfied with the quality? Let us know on the same day and we’ll make it right with a replacement or refund for genuine quality issues.</p>
-      </div>
-    </section>
-
     <section class="pickup" id="delivery">
       <div class="container">
         <h2>Pickup & Delivery</h2>
         <p class="lead">Currently available for <strong>self-pickup only</strong> at our stall. Delivery via Grab and Foodpanda coming soon!</p>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <h2>What Our Customers Say</h2>
+        <p class="lead">Real screenshots from happy customers. Thanks for the love! 💛</p>
+
+        <div class="rail" aria-label="Customer reviews, auto scrolling">
+          <div class="track">
+            <!-- set 1 -->
+            <figure class="item"><img src="assets/reviews/rev1.jpg" alt="Customer review 1"></figure>
+            <figure class="item"><img src="assets/reviews/rev2.jpg" alt="Customer review 2"></figure>
+            <figure class="item"><img src="assets/reviews/rev3.jpg" alt="Customer review 3"></figure>
+            <figure class="item"><img src="assets/reviews/rev4.jpg" alt="Customer review 4"></figure>
+            <figure class="item"><img src="assets/reviews/rev5.jpg" alt="Customer review 5"></figure>
+            <figure class="item"><img src="assets/reviews/rev6.jpg" alt="Customer review 6"></figure>
+            <!-- set 2 (duplicate for seamless loop) -->
+            <figure class="item"><img src="assets/reviews/rev1.jpg" alt="Customer review 1 duplicate"></figure>
+            <figure class="item"><img src="assets/reviews/rev2.jpg" alt="Customer review 2 duplicate"></figure>
+            <figure class="item"><img src="assets/reviews/rev3.jpg" alt="Customer review 3 duplicate"></figure>
+            <figure class="item"><img src="assets/reviews/rev4.jpg" alt="Customer review 4 duplicate"></figure>
+            <figure class="item"><img src="assets/reviews/rev5.jpg" alt="Customer review 5 duplicate"></figure>
+            <figure class="item"><img src="assets/reviews/rev6.jpg" alt="Customer review 6 duplicate"></figure>
+          </div>
+        </div>
+
+        <div class="hint">Auto-scrolling. No need to swipe.</div>
+      </div>
+    </section>
+
+    <section class="delivery" id="guarantee">
+      <div class="container">
+        <h2>Fresh Guarantee</h2>
+        <p class="lead">Not satisfied with the quality? Let us know on the same day and we’ll make it right with a replacement or refund for genuine quality issues.</p>
       </div>
     </section>
 
@@ -334,19 +450,19 @@
           <div>
             <div class="qr">
               <div>
-                <img src="assets/qr-ig.png" alt="QR code for Instagram" />
+                <img src="assets/qr/qr-ig.png" alt="QR code for Instagram" />
                 <div class="label">Instagram</div>
               </div>
               <div>
-                <img src="assets/qr-fb.png" alt="QR code for Facebook Page" />
+                <img src="assets/qr/qr-fb.png" alt="QR code for Facebook Page" />
                 <div class="label">Facebook Page</div>
               </div>
               <div>
-                <img src="assets/qr-wa.png" alt="QR code for WhatsApp" />
+                <img src="assets/qr/qr-wa.png" alt="QR code for WhatsApp" />
                 <div class="label">WhatsApp</div>
               </div>
               <div>
-                <img src="assets/qr-location.png" alt="QR code for Google Maps Location" />
+                <img src="assets/qr/qr-location.png" alt="QR code for Google Maps Location" />
                 <div class="label">Google Maps</div>
               </div>
             </div>
