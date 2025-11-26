@@ -36,7 +36,7 @@ export default {
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-        'scroll-x': 'scroll-x 160s linear infinite',
+        'scroll-x': 'scroll-x 80s linear infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
