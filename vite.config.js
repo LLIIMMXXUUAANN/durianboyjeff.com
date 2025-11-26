@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    // No special config needed for basic static site
+  base: '/new_durianboy_jeff/',   // repo name
 })
