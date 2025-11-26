@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Primary SEO -->
   <title>DurianBoy Jeff</title>
-  <meta name="description" content="DurianBoy Jeff — Taiping’s trusted durian stall serving fresh Musang King, Black Thorn, D24 XO and more. Picked daily for maximum freshness and unforgettable flavor." />
-  <meta name="keywords" content="Durian Taiping, Musang King Taiping, Black Thorn Durian, Fresh Durian Perak, D24 XO, DurianBoy Jeff, Taiping Durian Stall, Farm Fresh Durian, Taiping Musang King Seller, Perak Durian Shop" />
+  <meta name="description"
+    content="DurianBoy Jeff — Taiping’s trusted durian stall serving fresh Musang King, Black Thorn, D24 XO and more. Picked daily for maximum freshness and unforgettable flavor." />
+  <meta name="keywords"
+    content="Durian Taiping, Musang King Taiping, Black Thorn Durian, Fresh Durian Perak, D24 XO, DurianBoy Jeff, Taiping Durian Stall, Farm Fresh Durian, Taiping Musang King Seller, Perak Durian Shop" />
   <meta name="author" content="DurianBoy Jeff" />
 
   <!-- Canonical + Branding -->
@@ -26,7 +29,8 @@
 
   <!-- Open Graph / Social Preview -->
   <meta property="og:title" content="DurianBoy Jeff | Fresh Musang King & Black Thorn Durian in Taiping" />
-  <meta property="og:description" content="Farm-to-table durians — Musang King, Black Thorn, D24 XO and more. Picked daily for maximum freshness in Taiping, Perak." />
+  <meta property="og:description"
+    content="Farm-to-table durians — Musang King, Black Thorn, D24 XO and more. Picked daily for maximum freshness in Taiping, Perak." />
   <meta property="og:image" content="https://durianboyjeff.com/assets/logo.png" />
   <meta property="og:url" content="https://durianboyjeff.com/" />
   <meta property="og:type" content="website" />
@@ -34,7 +38,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DurianBoy Jeff | Fresh Durians in Taiping" />
-  <meta name="twitter:description" content="Taiping’s favorite durian stall — serving Musang King, Black Thorn and D24 XO daily. Fresh from farm to table!" />
+  <meta name="twitter:description"
+    content="Taiping’s favorite durian stall — serving Musang King, Black Thorn and D24 XO daily. Fresh from farm to table!" />
   <meta name="twitter:image" content="https://durianboyjeff.com/assets/logo.png" />
 
   <!-- Structured Data (Brand + Site Name + Local Business) -->
@@ -92,393 +97,510 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <style>
-    :root{ --green:#0f5132; --lime:#cfe9a8; --gold:#f1c40f; --cream:#fffdf5; --ink:#1b1b1b; --muted:#6b7280; }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji; color:var(--ink); background:var(--cream)}
-    a{color:var(--green);text-decoration:none}
-    a:hover{opacity:.9}
-
-    .container{max-width:1100px;margin:0 auto;padding:0 24px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:var(--green);color:#fff;font-weight:700;transition:.2s;text-align:center}
-    .btn.alt{background:var(--gold);color:#1b1b1b}
-    .btn:hover{transform:translateY(-1px)}
-
-    header{position:sticky;top:0;z-index:50;background:#ffffffdd;backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid #eee;padding:0 24px}
-    header .bar{display:flex;align-items:center;justify-content:space-between;padding:10px 0;position:relative}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    .brand img{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#fff}
-
-    /* keep toggle at right */
-    header .bar > .brand{order:1}
-    header .bar > nav{order:2;margin-left:auto}
-    header .bar > .nav-toggle{order:3}
-
-    /* desktop nav */
-    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
-    nav li{position:relative;padding:0 10px}
-    nav li:not(:last-child)::after{content:"|";position:absolute;right:-10px;top:0;color:#ccc;font-weight:400}
-    nav a{font-weight:600;color:#111;transition:.2s}
-    nav a:hover{color:var(--green)}
-
-    .nav-toggle{display:none;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #e5e7eb;border-radius:10px;background:#fff;margin-left:8px}
-    .nav-toggle svg{width:20px;height:20px}
-
-    /* HERO */
-    .hero{position:relative;padding:0 24px; background:var(--cream);} /* keep hero warm */
-    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:60px 0}
-    .tag{display:inline-flex;gap:8px;align-items:center;background:var(--lime);color:var(--green);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;letter-spacing:.2px}
-    .headline{font-size:44px;line-height:1.1;margin:12px 0 10px}
-    .sub{color:var(--muted);font-size:18px;margin:0 0 18px}
-    .hero .img{position:relative;min-height:280px;border-radius:20px;background:#e8f3d9 url('assets/hero-durian.jpg') center/cover no-repeat;border:1px solid #e5e7eb}
-
-    .btn-container{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;}
-
-    /* --- CONSISTENT SECTION RHYTHM --- */
-    section{padding:60px 24px; background: linear-gradient(180deg, #ffffff 0%, #f9fef3 100%);}          /* unify sections on white */
-    section + section{border-top:1px solid #eee;}          /* one subtle divider before each section */
-
-    h2{font-size:32px;margin:0 0 14px}
-    .lead{color:var(--muted)}
-
-    /* About stays white; let global divider handle the top line */
-    .about{background: linear-gradient(180deg, #ffffff 0%, #f9fef3 100%);;border-bottom:1px solid #eee;}
-    .about .bgpic{position:relative;border-radius:18px;overflow:hidden;height:220px;background:#dbeafe url('assets/about-bg.jpg') center/cover no-repeat;border:1px solid #e5e7eb}
-
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
-    .card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid #eee}
-    .card .pill{display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:6px 12px;font-size:15px;font-weight:600;color:#374151;background:#fafafa}
-
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .feat{padding:18px;border:1px solid #e5e7eb;border-radius:14px;background:#fff}
-    .feat h3{margin:0 0 6px;font-size:18px}
-
-    /* Keep pickup/delivery gentle gradient; avoid double-top line (global rule provides the top) */
-    .delivery, .pickup{
-      background:linear-gradient(180deg,#ffffff 0,#f9fef3 100%);
-      border-bottom:1px solid #eee;
-    }
-
-    /* ===== Reviews (Auto-scroll Carousel) ===== */
-    .reviews{background:linear-gradient(180deg,#ffffff 0,#f9fef3 100%);}
-    .reviews .rail{
-      overflow:hidden;
-      mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
-    }
-    .reviews .track{
-      display:flex;
-      gap:16px;
-      width:max-content;
-      animation:scroll-x 40s linear infinite;
-    }
-    .reviews .item{
-      flex:0 0 auto;
-      width:275px;
-      max-width:85vw;
-      background:#fff;
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,.05);
-      overflow:hidden;
-      padding:10px;              /* 🟡 adds white border space inside */
-      box-sizing:border-box;
-    }
-    /* make sure the image fits inside neatly */
-    .reviews img{
-      display:block;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      border-radius:12px;       /* 🟡 optional: soft corners */
-      background:#fff;          /* fallback white background */
-    }
-    .reviews .hint{
-      color:var(--muted);
-      font-size:13px;
-      margin-top:10px;
-      text-align:center;
-    }
-    @keyframes scroll-x{
-      from{ transform: translateX(0); }
-      to{   transform: translateX(-50%); } /* because we duplicate set */
-    }
-    /* reduce motion preference */
-    @media (prefers-reduced-motion: reduce){
-      .reviews .track{ animation: none; }
-    }
-
-    .contact{}
-    .contact .grid{grid-template-columns:1.2fr .8fr}
-    .contact .card p{margin:8px 0}
-
-    footer{padding:26px 24px;color:#6b7280;border-top:1px solid #eee;background: var(--cream);}
-
-    .qr{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .qr img{width:100%;border-radius:12px;border:1px solid #e5e7eb;object-fit:contain;background:#fff;padding:8px}
-    .qr .label{margin-top:6px;text-align:center;font-size:12px;color:#64748b}
-
-    /* === MOBILE + TABLET (everything below 1200px) === */
-    /* use hamburger button for nav; full nav only on laptops/desktops */
-    @media (max-width:1199px){
-      header{padding:0 24px;}
-
-      /* show toggle + hide inline menu */
-      .nav-toggle{display:inline-flex;}
-      nav{position:static;}
-      nav ul{
-        display:none;
-        position:absolute; left:24px; right:24px; top:56px;
-        background:#ffffff; border:1px solid #eee; padding:14px 20px;
-        flex-direction:column; gap:8px; border-radius:12px;
-        box-shadow:0 10px 30px rgba(0,0,0,.08);
-      }
-      nav.open ul{display:flex;}
-      nav li{padding:0;}
-      nav li::after{display:none;}
-      nav a{display:block;padding:10px 12px;border-radius:10px;}
-      nav a:active{background:#f1f5f9;}
-
-      /* common stacking for smaller screens */
-      .hero .wrap{
-        grid-template-columns:1fr;
-        gap:18px;
-        text-align:center;
-        justify-items:center;
-      }
-      .hero .img{margin:0 auto;width:90%;}
-      .btn-container{justify-content:center;}
-      .features{grid-template-columns:1fr;}
-      .contact .grid{grid-template-columns:1fr;}
-      .headline{font-size:36px;}
-    }
-
-    /* === iPad Air (700–900 px): 2 columns for Durian Varieties === */
-    @media (min-width:700px) and (max-width:900px){
-      .grid{grid-template-columns:repeat(2,1fr);}
-    }
-
-    /* === iPad Pro (901–1199 px): 3 columns for Durian Varieties === */
-    @media (min-width:901px) and (max-width:1199px){
-      .grid{grid-template-columns:repeat(3,1fr);}
-    }
-
-    /* === Small Mobile (<700 px): 1 column for Durian Varieties === */
-    @media (max-width:699px){
-      .grid{grid-template-columns:1fr;}
-    }
-
-    /* === HERO IMAGE BACKGROUND FIX WITH YELLOW === */
-
-    /* Desktop default */
-    .hero .img{
-      position: relative;
-      border-radius: 20px;
-      border: 1px solid #e5e7eb;
-      background: #ffe957 url('assets/hero-durian.jpg') center/cover no-repeat; /* 🔸 new yellow tone */
-    }
-
-    /* iPad Air */
-    @media (min-width:700px) and (max-width:900px){
-      .hero .img{
-        background: #ffe957 url('assets/hero-durian.jpg') center/contain no-repeat; /* full image shown */
-        aspect-ratio: 16 / 9;
-        width: 88%;
-        margin: 0 auto;
-      }
-    }
-
-    /* iPad Pro */
-    @media (min-width:901px) and (max-width:1199px){
-      .hero .img{
-        background: #ffe957 url('assets/hero-durian.jpg') center/contain no-repeat;
-        aspect-ratio: 16 / 9;
-        width: 78%;
-        margin: 0 auto;
-      }
-    }
-  </style>
-
+  <!-- Vite Entry -->
+  <script type="module" src="/main.js"></script>
 </head>
-<body>
-  <header>
-    <div class="bar">
-      <div class="brand">
-        <img src="assets/logo.png" alt="DurianBoy Jeff logo" />
+
+<body class="bg-cream text-ink font-sans">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-6">
+    <div class="flex items-center justify-between py-2.5 relative">
+      <div class="brand flex items-center gap-3 font-extrabold order-1">
+        <img src="assets/logo.png" alt="DurianBoy Jeff logo" class="w-10 h-10 object-contain rounded-lg bg-white" />
         <span>DurianBoy Jeff</span>
       </div>
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+
+      <button id="nav-toggle"
+        class="nav-toggle xl:hidden inline-flex items-center justify-center w-[38px] h-[38px] border border-gray-200 rounded-lg bg-white ml-2 order-3"
+        aria-label="Toggle menu" aria-expanded="false">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
       </button>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#varieties">Varieties</a></li>
-          <li><a href="#why">Why Durians</a></li>
-          <li><a href="#delivery">Pickup</a></li>
-          <li><a href="#reviews">Customer Reviews</a></li>
-          <li><a href="#guarantee">Fresh Guarantee</a></li>
-          <li><a href="#contact">Contact</a></li>
+
+      <nav aria-label="Primary" class="order-2 ml-auto group">
+        <ul
+          class="hidden xl:flex gap-5 list-none m-0 p-0 absolute xl:static left-6 right-6 top-14 bg-white xl:bg-transparent border border-gray-100 xl:border-none p-3.5 xl:p-0 flex-col xl:flex-row gap-2 xl:gap-5 rounded-xl xl:rounded-none shadow-xl xl:shadow-none group-[.open]:flex">
+          <li
+            class="relative px-2.5 xl:after:content-['|'] xl:after:absolute xl:after:-right-2.5 xl:after:top-0 xl:after:text-gray-300 xl:after:font-normal last:after:hidden">
+            <a href="#about"
+              class="block xl:inline font-semibold text-ink hover:text-green transition-colors p-2.5 xl:p-0 rounded-lg active:bg-slate-50 xl:active:bg-transparent">About
+              Us</a>
+          </li>
+          <li
+            class="relative px-2.5 xl:after:content-['|'] xl:after:absolute xl:after:-right-2.5 xl:after:top-0 xl:after:text-gray-300 xl:after:font-normal last:after:hidden">
+            <a href="#varieties"
+              class="block xl:inline font-semibold text-ink hover:text-green transition-colors p-2.5 xl:p-0 rounded-lg active:bg-slate-50 xl:active:bg-transparent">Varieties</a>
+          </li>
+          <li
+            class="relative px-2.5 xl:after:content-['|'] xl:after:absolute xl:after:-right-2.5 xl:after:top-0 xl:after:text-gray-300 xl:after:font-normal last:after:hidden">
+            <a href="#why"
+              class="block xl:inline font-semibold text-ink hover:text-green transition-colors p-2.5 xl:p-0 rounded-lg active:bg-slate-50 xl:active:bg-transparent">Why
+              Durians</a>
+          </li>
+          <li
+            class="relative px-2.5 xl:after:content-['|'] xl:after:absolute xl:after:-right-2.5 xl:after:top-0 xl:after:text-gray-300 xl:after:font-normal last:after:hidden">
+            <a href="#delivery"
+              class="block xl:inline font-semibold text-ink hover:text-green transition-colors p-2.5 xl:p-0 rounded-lg active:bg-slate-50 xl:active:bg-transparent">Pickup</a>
+          </li>
+          <li
+            class="relative px-2.5 xl:after:content-['|'] xl:after:absolute xl:after:-right-2.5 xl:after:top-0 xl:after:text-gray-300 xl:after:font-normal last:after:hidden">
+            <a href="#reviews"
+              class="block xl:inline font-semibold text-ink hover:text-green transition-colors p-2.5 xl:p-0 rounded-lg active:bg-slate-50 xl:active:bg-transparent">Customer
+              Reviews</a>
+          </li>
+          <li
+            class="relative px-2.5 xl:after:content-['|'] xl:after:absolute xl:after:-right-2.5 xl:after:top-0 xl:after:text-gray-300 xl:after:font-normal last:after:hidden">
+            <a href="#guarantee"
+              class="block xl:inline font-semibold text-ink hover:text-green transition-colors p-2.5 xl:p-0 rounded-lg active:bg-slate-50 xl:active:bg-transparent">Fresh
+              Guarantee</a>
+          </li>
+          <li
+            class="relative px-2.5 xl:after:content-['|'] xl:after:absolute xl:after:-right-2.5 xl:after:top-0 xl:after:text-gray-300 xl:after:font-normal last:after:hidden">
+            <a href="#contact"
+              class="block xl:inline font-semibold text-ink hover:text-green transition-colors p-2.5 xl:p-0 rounded-lg active:bg-slate-50 xl:active:bg-transparent">Contact</a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="container wrap">
-        <div>
-          <span class="tag">Fresh Daily • Farm-to-Table</span>
-          <h1 class="headline">The Kingdom of Durians, served fresh in Taiping</h1>
-          <p class="sub">Picked at peak ripeness and delivered daily for maximum freshness. Musang King, Black Thorn, D24 XO, Red Prawn, Tekka, Horloh and more.</p>
-          <div class="btn-container">
-            <a class="btn" href="#varieties">Browse Varieties</a>
-            <a class="btn alt" href="#contact">Contact Us</a>
-          </div>
-        </div>
-        <div class="img" role="img" aria-label="Durian display"></div>
+    <section class="hero relative px-6 bg-cream py-20 overflow-hidden" id="home">
+      <!-- Background decoration -->
+      <div
+        class="absolute top-0 right-0 w-[600px] h-[600px] bg-lime/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none">
       </div>
-    </section>
 
-    <section class="about" id="about">
-      <div class="container" style="display:grid; gap:18px">
-        <div class="bgpic" aria-hidden="true" style="background-image:url('assets/about-bg.jpg')"></div>
-        <div>
-          <h2>About Us</h2>
-          <p class="lead"><strong>At DurianBoy Jeff</strong>, we believe durians should be enjoyed the way nature intended, <em>fresh</em>, <em>flavorful</em>, and <em>straight from the farm</em>. That’s why we bring you the best durians, picked at their peak and delivered daily for maximum freshness.</p>
-          <p class="lead">We’re passionate about giving our customers a <strong>true farm-to-table experience</strong>, so every durian you taste is as authentic and delicious as it gets. With a wide selection of varieties to choose from, there’s always something new to discover, whether you’re a durian enthusiast or trying it for the first time.</p>
-          <p class="lead"><strong>Freshness. Variety. Quality.</strong> That’s what we stand for.</p>
-        </div>
-      </div>
-    </section>
+      <!-- Hero Image Background Removed -->
 
-    <section id="varieties">
-      <div class="container">
-        <h2>Durian Varieties</h2>
-        <p class="lead">Our most popular selections. Prices vary by season. Contact us for today’s rate.</p>
-        <div class="grid" style="margin-top:16px">
-          <article class="card"><img src="assets/variaties/musang-king.png" alt="Musang King D197" /><div class="pill">D197 • Musang King</div><p>Yellow, creamy flesh with a rich sweetness that finishes with a pleasant, subtle bitterness.</p></article>
-          <article class="card"><img src="assets/variaties/black-thorn.png" alt="Black Thorn D200" /><div class="pill">D200 • Black Thorn</div><p>Thick, creamy texture with a gentle <em>wine-like</em> (fermented) note and striking orange flesh.</p></article>
-          <article class="card"><img src="assets/variaties/d24-xo.jpg" alt="D24 XO" /><div class="pill">D24 • XO</div><p>Classic D24 profile with a pronounced bitter edge and lightly fermented character.</p></article>
-          <article class="card"><img src="assets/variaties/udang-merah.png" alt="Udang Merah D175" /><div class="pill">D175 • Udang Merah (Red Prawn)</div><p>Fibreless, creamy flesh celebrated for its rich, sweet, fruity flavour. A northern Malaysian favourite.</p></article>
-          <article class="card"><img src="assets/variaties/tekka.jpg" alt="Tekka D160" /><div class="pill">D160 • Tekka (Musang Queen)</div><p>Golden, sticky flesh with a bold bitter profile elegantly balanced by a sweet aftertaste.</p></article>
-          <article class="card"><img src="assets/variaties/horloh.jpeg" alt="Horloh D163" /><div class="pill">D163 • Horloh</div><p>Dry, sticky flesh with a slightly bitter, floral character. Bold and creamy.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="why">
-      <div class="container">
-        <h2>Why Durian is the King of Fruits</h2>
-        <div class="features" style="margin-top:14px">
-          <div class="feat"><h3>Rich, Complex Flavour</h3><p>Creamy textures, balanced sweetness and a delightful aroma. Each variety offers a distinct, satisfying taste.</p></div>
-          <div class="feat"><h3>Nutrient Powerhouse</h3><p>Packed with vitamins, fiber, potassium and antioxidants. Durian is both indulgent and nourishing.</p></div>
-          <div class="feat"><h3>Cultural Pride</h3><p>Revered across Southeast Asia, durian is celebrated as a seasonal delicacy that brings families and friends together.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pickup" id="delivery">
-      <div class="container">
-        <h2>Pickup & Delivery</h2>
-        <p class="lead">Currently available for <strong>self-pickup only</strong> at our stall. Delivery via Grab and Foodpanda coming soon!</p>
-      </div>
-    </section>
-
-    <section id="reviews" class="reviews">
-      <div class="container">
-        <h2>What Our Customers Say</h2>
-        <p class="lead">Real screenshots from happy customers. Thanks for the love! 💛</p>
-
-        <div class="rail" aria-label="Customer reviews, auto scrolling">
-          <div class="track">
-            <!-- set 1 -->
-            <figure class="item"><img src="assets/reviews/rev1.jpg" alt="Customer review 1"></figure>
-            <figure class="item"><img src="assets/reviews/rev2.jpg" alt="Customer review 2"></figure>
-            <figure class="item"><img src="assets/reviews/rev3.jpg" alt="Customer review 3"></figure>
-            <figure class="item"><img src="assets/reviews/rev4.jpg" alt="Customer review 4"></figure>
-            <figure class="item"><img src="assets/reviews/rev5.jpg" alt="Customer review 5"></figure>
-            <figure class="item"><img src="assets/reviews/rev6.jpg" alt="Customer review 6"></figure>
-            <!-- set 2 (duplicate for seamless loop) -->
-            <figure class="item"><img src="assets/reviews/rev1.jpg" alt="Customer review 1 duplicate"></figure>
-            <figure class="item"><img src="assets/reviews/rev2.jpg" alt="Customer review 2 duplicate"></figure>
-            <figure class="item"><img src="assets/reviews/rev3.jpg" alt="Customer review 3 duplicate"></figure>
-            <figure class="item"><img src="assets/reviews/rev4.jpg" alt="Customer review 4 duplicate"></figure>
-            <figure class="item"><img src="assets/reviews/rev5.jpg" alt="Customer review 5 duplicate"></figure>
-            <figure class="item"><img src="assets/reviews/rev6.jpg" alt="Customer review 6 duplicate"></figure>
+      <div
+        class="container-custom grid grid-cols-1 xl:grid-cols-[1.1fr_0.9fr] gap-10 items-center text-center xl:text-left justify-items-center xl:justify-items-start relative z-10">
+        <div class="animate-fade-in-up">
+          <span class="tag mb-4 shadow-sm">Fresh Daily • Farm-to-Table</span>
+          <h1 class="text-5xl md:text-[56px] leading-[1.1] mb-6 font-extrabold tracking-tight text-ink">The Kingdom of
+            Durians, <span class="text-green">served fresh</span> in Taiping</h1>
+          <p class="text-muted text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto xl:mx-0">Picked at peak
+            ripeness and delivered daily for maximum freshness. Musang King, Black Thorn, D24 XO, Red Prawn, Tekka,
+            Horloh and more.</p>
+          <div class="flex gap-4 flex-wrap justify-center xl:justify-start">
+            <a class="btn shadow-lg shadow-green/20 hover:shadow-green/30 hover:scale-105" href="#varieties">Browse
+              Varieties</a>
+            <a class="btn btn-alt shadow-lg shadow-gold/20 hover:shadow-gold/30 hover:scale-105" href="#contact">Contact
+              Us</a>
           </div>
         </div>
 
-        <div class="hint">Auto-scrolling. No need to swipe.</div>
+        <!-- Hero Image -->
+        <div class="hidden xl:block animate-fade-in-up delay-100 relative">
+          <div class="absolute inset-0 bg-green/20 blur-[60px] rounded-full transform translate-y-10"></div>
+          <div
+            class="relative w-full max-w-[500px] mx-auto rounded-3xl overflow-hidden drop-shadow-2xl hover:scale-105 transition-transform duration-500">
+            <img src="assets/hero-durian.jpg" alt="DurianBoy Jeff Fresh Durian"
+              class="w-full h-full object-contain rounded-3xl">
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="delivery" id="guarantee">
-      <div class="container">
-        <h2>Fresh Guarantee</h2>
-        <p class="lead">Not satisfied with the quality? Let us know on the same day and we’ll make it right with a replacement or refund for genuine quality issues.</p>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contact Us</h2>
-        <div class="grid" style="margin-top:10px">
-          <div class="card">
-            <p><strong>Address</strong><br>
-              <a href="https://www.google.com/maps?q=DurianBoy+Jeff,+No.5+Jalan+Panggung+Wayang,+34000+Taiping,+Perak" target="_blank" rel="noopener">
-                No. 5, Jalan Panggung Wayang, 34000 Taiping, Perak
-              </a>
-            </p>
-            <p><strong>Business Hours</strong><br>11:00 am – 6:00 pm, Everyday</p>
-            <p><strong>Phone & WhatsApp</strong><br>
-              <a href="tel:+60167327055">016-732 7055 (Jeff)</a><br>
-              <a href="tel:+60124281640">012-428 1640 (Woei)</a>
-            </p>
-            <p><strong>Social Media</strong><br>
-              IG: <a href="https://instagram.com/durianboyjeff" target="_blank" rel="noopener">@durianboyjeff</a><br>
-              FB (Owner): <a href="https://www.facebook.com/people/Jeff-Wong/61576949175989/" target="_blank" rel="noopener">Jeff Wong</a><br>
-              FB (Official Page): <a href="https://www.facebook.com/profile.php?id=61577221352088" target="_blank" rel="noopener">DurianBoy Jeff</a>
-            </p>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
-              <a class="btn" href="#varieties">Check Today’s Picks</a>
-              <a class="btn alt" href="https://wa.me/60167327055" target="_blank" rel="noopener">WhatsApp Us</a>
+    <!-- About Us -->
+    <section id="about" class="py-20 px-6 bg-white">
+      <div class="container-custom grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <img src="assets/about-bg.jpg" alt="Durian orchard"
+            class="rounded-3xl shadow-xl w-full object-cover h-[400px] md:h-[500px]">
+        </div>
+        <div class="order-1 md:order-2">
+          <span class="tag mb-4">Our Story</span>
+          <h2 class="text-4xl font-extrabold mb-6 text-ink">Farm Fresh, <span class="text-green">Hearty Taste</span>
+          </h2>
+          <p class="text-muted text-lg mb-6 leading-relaxed">
+            At DurianBoy Jeff, we believe durians should be enjoyed the way nature intended, fresh, flavorful, and
+            straight from the farm. That’s why we bring you the best durians, picked at their peak and delivered daily
+            for maximum freshness.
+          </p>
+          <p class="text-muted text-lg mb-8 leading-relaxed">
+            We’re passionate about giving our customers a true farm-to-table experience, so every durian you taste is as
+            authentic and delicious as it gets. With a wide selection of varieties to choose from, there’s always
+            something new to discover.
+          </p>
+          <div class="flex gap-4">
+            <div class="flex flex-col">
+              <span class="text-3xl font-bold text-green">100%</span>
+              <span class="text-sm text-muted">Fresh Guarantee</span>
             </div>
+            <div class="w-px bg-gray-200"></div>
+            <div class="flex flex-col">
+              <span class="text-3xl font-bold text-green">Daily</span>
+              <span class="text-sm text-muted">Farm Picks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Varieties -->
+    <section id="varieties" class="py-20 px-6 bg-cream">
+      <div class="container-custom">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="tag mb-4">Our Selection</span>
+          <h2 class="text-4xl font-extrabold mb-4 text-ink">Durian Varieties</h2>
+          <p class="text-muted text-lg">Our most popular selections. Prices vary by season. Contact us for today’s rate.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Musang King -->
+          <div class="bg-white rounded-3xl p-6 shadow-soft hover:shadow-lg transition-all hover:-translate-y-1 group">
+            <div class="h-64 bg-white mb-6 overflow-hidden relative rounded-2xl flex items-center justify-center">
+              <img src="assets/variaties/musang-king.png" alt="Musang King"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-ink">Musang King <span
+                class="text-green text-lg font-normal ml-2">(D197)</span></h3>
+            <p class="text-muted">Yellow, creamy flesh with a rich sweetness that finishes with a pleasant, subtle
+              bitterness.</p>
+          </div>
+
+          <!-- Black Thorn -->
+          <div class="bg-white rounded-3xl p-6 shadow-soft hover:shadow-lg transition-all hover:-translate-y-1 group">
+            <div class="h-64 bg-white mb-6 overflow-hidden relative rounded-2xl flex items-center justify-center">
+              <img src="assets/variaties/black-thorn.png" alt="Black Thorn"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-ink">Black Thorn <span
+                class="text-green text-lg font-normal ml-2">(D200)</span></h3>
+            <p class="text-muted">Thick, creamy texture with a gentle wine-like (fermented) note and striking orange
+              flesh.</p>
+          </div>
+
+          <!-- D24 XO -->
+          <div class="bg-white rounded-3xl p-6 shadow-soft hover:shadow-lg transition-all hover:-translate-y-1 group">
+            <div class="h-64 bg-white mb-6 overflow-hidden relative rounded-2xl flex items-center justify-center">
+              <img src="assets/variaties/d24-xo.jpg" alt="D24 XO"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-ink">D24 XO <span
+                class="text-green text-lg font-normal ml-2">(D24)</span></h3>
+            <p class="text-muted">Classic D24 profile with a pronounced bitter edge and lightly fermented character.</p>
+          </div>
+
+          <!-- Red Prawn -->
+          <div class="bg-white rounded-3xl p-6 shadow-soft hover:shadow-lg transition-all hover:-translate-y-1 group">
+            <div class="h-64 bg-white mb-6 overflow-hidden relative rounded-2xl flex items-center justify-center">
+              <img src="assets/variaties/udang-merah.png" alt="Red Prawn"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-ink">Red Prawn <span
+                class="text-green text-lg font-normal ml-2">(D175)</span></h3>
+            <p class="text-muted">Fibreless, creamy flesh celebrated for its rich, sweet, fruity flavour. A northern
+              Malaysian favourite.</p>
+          </div>
+
+          <!-- Tekka -->
+          <div class="bg-white rounded-3xl p-6 shadow-soft hover:shadow-lg transition-all hover:-translate-y-1 group">
+            <div class="h-64 bg-white mb-6 overflow-hidden relative rounded-2xl flex items-center justify-center">
+              <img src="assets/variaties/tekka.jpg" alt="Tekka"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-ink">Tekka <span
+                class="text-green text-lg font-normal ml-2">(D160)</span></h3>
+            <p class="text-muted">Golden, sticky flesh with a bold bitter profile elegantly balanced by a sweet
+              aftertaste.</p>
+          </div>
+
+          <!-- Horloh -->
+          <div class="bg-white rounded-3xl p-6 shadow-soft hover:shadow-lg transition-all hover:-translate-y-1 group">
+            <div class="h-64 bg-white mb-6 overflow-hidden relative rounded-2xl flex items-center justify-center">
+              <img src="assets/variaties/horloh.jpeg" alt="Horloh"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-ink">Horloh <span
+                class="text-green text-lg font-normal ml-2">(D163)</span></h3>
+            <p class="text-muted">Dry, sticky flesh with a slightly bitter, floral character. Bold and creamy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Durians -->
+    <section id="why" class="py-20 px-6 bg-white">
+      <div class="container-custom">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="tag mb-4">The King of Fruits</span>
+          <h2 class="text-4xl font-extrabold mb-4 text-ink">Why Durian?</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-8 rounded-3xl bg-cream border border-gray-100 text-center hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-bold mb-3 text-ink">Rich, Complex Flavour</h3>
+            <p class="text-muted">Creamy textures, balanced sweetness and a delightful aroma. Each variety offers a
+              distinct, satisfying taste.</p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-cream border border-gray-100 text-center hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-bold mb-3 text-ink">Nutrient Powerhouse</h3>
+            <p class="text-muted">Packed with vitamins, fiber, potassium and antioxidants. Durian is both indulgent and
+              nourishing.</p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-cream border border-gray-100 text-center hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-bold mb-3 text-ink">Cultural Pride</h3>
+            <p class="text-muted">Revered across Southeast Asia, durian is celebrated as a seasonal delicacy that brings
+              families and friends together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pickup & Delivery -->
+    <section id="delivery" class="py-20 px-6 bg-cream border-t border-gray-100">
+      <div class="container-custom text-center max-w-3xl mx-auto">
+        <span class="tag mb-4">How to Buy</span>
+        <h2 class="text-4xl font-extrabold mb-6 text-ink">Pickup & Delivery</h2>
+        <p class="text-muted text-lg mb-8">
+          Currently available for self-pickup only at our stall. Delivery via Grab and Foodpanda coming soon!
+        </p>
+
+        <div
+          class="bg-white p-8 rounded-3xl shadow-sm inline-flex flex-col md:flex-row items-center gap-8 w-full max-w-2xl text-left">
+          <div class="w-20 h-20 rounded-full bg-green/10 text-green flex items-center justify-center shrink-0">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
           </div>
           <div>
-            <div class="qr">
-              <div>
-                <img src="assets/qr/qr-ig.png" alt="QR code for Instagram" />
-                <div class="label">Instagram</div>
+            <p class="font-bold text-ink text-xl mb-2">Self-Pickup Location</p>
+            <p class="text-muted text-lg mb-4">No. 5, Jalan Panggung Wayang, 34000 Taiping, Perak</p>
+            <a href="https://www.google.com/maps?q=DurianBoy+Jeff,+No.5+Jalan+Panggung+Wayang,+34000+Taiping,+Perak"
+              target="_blank" class="text-green font-semibold hover:underline flex items-center gap-2">
+              View on Google Maps
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews" class="py-20 px-6 bg-white overflow-hidden">
+      <div class="container-custom text-center mb-12">
+        <h2 class="text-4xl mb-4 font-extrabold tracking-tight text-ink">What Our Customers Say</h2>
+        <p class="text-muted text-lg">Real screenshots from happy customers. Thanks for the love! 💛</p>
+      </div>
+
+      <div
+        class="rail overflow-hidden [mask-image:linear-gradient(to_right,transparent_0,black_10%,black_90%,transparent_100%)] py-4 max-w-[1400px] mx-auto"
+        aria-label="Customer reviews, auto scrolling">
+        <div class="track flex gap-6 w-max animate-scroll-x hover:[animation-play-state:paused]">
+          <!-- set 1 -->
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev1.jpg" alt="Customer review 1"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev2.jpg" alt="Customer review 2"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev3.jpg" alt="Customer review 3"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev4.jpg" alt="Customer review 4"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev5.jpg" alt="Customer review 5"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev6.jpg" alt="Customer review 6"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <!-- set 2 (duplicate for seamless loop) -->
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev1.jpg" alt="Customer review 1 duplicate"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev2.jpg" alt="Customer review 2 duplicate"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev3.jpg" alt="Customer review 3 duplicate"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev4.jpg" alt="Customer review 4 duplicate"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev5.jpg" alt="Customer review 5 duplicate"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+          <figure
+            class="item flex-none w-[300px] bg-white border border-gray-100 rounded-3xl shadow-soft p-3 box-border transition-transform hover:scale-105 hover:shadow-lg duration-300">
+            <img src="assets/reviews/rev6.jpg" alt="Customer review 6 duplicate"
+              class="block w-full h-auto rounded-2xl bg-gray-50">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fresh Guarantee -->
+    <section id="guarantee" class="py-20 px-6 bg-cream">
+      <div class="container-custom text-center max-w-3xl mx-auto">
+        <div
+          class="w-20 h-20 bg-green text-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg shadow-green/30">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h2 class="text-4xl font-extrabold mb-6 text-ink">Fresh Guarantee</h2>
+        <p class="text-muted text-lg leading-relaxed">
+          Not satisfied with the quality? Let us know on the same day and we’ll make it right with a replacement or
+          refund for genuine quality issues.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-6 bg-white border-t border-gray-100">
+      <div class="container-custom grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <span class="tag mb-4">Get in Touch</span>
+          <h2 class="text-4xl font-extrabold mb-8 text-ink">Contact Us</h2>
+
+          <div class="space-y-8">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cream flex items-center justify-center text-green shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
               </div>
               <div>
-                <img src="assets/qr/qr-fb.png" alt="QR code for Facebook Page" />
-                <div class="label">Facebook Page</div>
-              </div>
-              <div>
-                <img src="assets/qr/qr-wa.png" alt="QR code for WhatsApp" />
-                <div class="label">WhatsApp</div>
-              </div>
-              <div>
-                <img src="assets/qr/qr-location.png" alt="QR code for Google Maps Location" />
-                <div class="label">Google Maps</div>
+                <h3 class="font-bold text-ink text-lg mb-1">Address</h3>
+                <p class="text-muted mb-2">No. 5, Jalan Panggung Wayang,<br>34000 Taiping, Perak</p>
+                <a href="https://www.google.com/maps?q=DurianBoy+Jeff,+No.5+Jalan+Panggung+Wayang,+34000+Taiping,+Perak"
+                  target="_blank" class="text-green font-semibold hover:underline">Get Directions</a>
               </div>
             </div>
-            <p style="margin-top:10px;color:var(--muted);font-size:12px">
-              Scan to connect with us instantly. Follow, chat, or navigate to our stall!
-            </p>
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cream flex items-center justify-center text-green shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-ink text-lg mb-1">Business Hours</h3>
+                <p class="text-muted">11:00 am – 6:00 pm<br>Everyday</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cream flex items-center justify-center text-green shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-ink text-lg mb-1">Phone & WhatsApp</h3>
+                <div class="flex flex-col gap-1">
+                  <a href="tel:+60167327055" class="text-muted hover:text-green transition-colors">016-732 7055
+                    (Jeff)</a>
+                  <a href="tel:+60124281640" class="text-muted hover:text-green transition-colors">012-428 1640
+                    (Woei)</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cream flex items-center justify-center text-green shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-ink text-lg mb-1">Social Media</h3>
+                <div class="flex flex-col gap-1">
+                  <a href="https://instagram.com/durianboyjeff" target="_blank"
+                    class="text-muted hover:text-green transition-colors">Instagram: @durianboyjeff</a>
+                  <a href="https://www.facebook.com/people/Jeff-Wong/61576949175989/" target="_blank"
+                    class="text-muted hover:text-green transition-colors">FB Owner: Jeff Wong</a>
+                  <a href="https://www.facebook.com/profile.php?id=61577221352088" target="_blank"
+                    class="text-muted hover:text-green transition-colors">FB Page: DurianBoy Jeff</a>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div class="bg-cream rounded-3xl p-8 flex flex-col justify-center items-center text-center">
+          <div class="grid grid-cols-2 gap-6 mb-6 w-full max-w-[400px]">
+            <div class="bg-white rounded-xl p-3 shadow-sm">
+              <img src="assets/qr/qr-wa.png" alt="WhatsApp QR" class="w-full h-auto rounded-lg">
+              <p class="text-sm text-muted mt-7 font-medium">WhatsApp</p>
+            </div>
+            <div class="bg-white rounded-xl p-3 shadow-sm">
+              <img src="assets/qr/qr-ig.png" alt="Instagram QR" class="w-full h-auto rounded-lg">
+              <p class="text-sm text-muted mt-7 font-medium">Instagram</p>
+            </div>
+            <div class="bg-white rounded-xl p-3 shadow-sm">
+              <img src="assets/qr/qr-fb.png" alt="Facebook QR" class="w-full h-auto rounded-lg">
+              <p class="text-sm text-muted mt-7 font-medium">Facebook</p>
+            </div>
+            <div class="bg-white rounded-xl p-3 shadow-sm">
+              <img src="assets/qr/qr-location.png" alt="Location QR" class="w-full h-auto rounded-lg">
+              <p class="text-sm text-muted mt-7 font-medium">Location</p>
+            </div>
+          </div>
+          <p class="text-muted text-sm max-w-xs mx-auto mt-8">Scan to connect with us instantly! Follow, chat, or
+            navigate to our stall!</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div>© <span id="year"></span> DurianBoy Jeff. All rights reserved.</div>
-      <div>Taiping • Perak, Malaysia</div>
+  <footer class="py-12 px-6 bg-white border-t border-gray-100">
+    <div class="container-custom flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3 font-extrabold text-ink">
+        <img src="assets/logo.png" alt="DurianBoy Jeff logo" class="w-8 h-8 object-contain rounded-lg" />
+        <span>DurianBoy Jeff</span>
+      </div>
+      <div class="text-gray-500 text-sm text-center md:text-right">
+        <p>&copy; <span id="year"></span> DurianBoy Jeff. All rights reserved.</p>
+        <p class="mt-1">Taiping • Perak, Malaysia</p>
+      </div>
     </div>
   </footer>
 
@@ -488,10 +610,13 @@
     // Mobile nav toggle
     const toggle = document.getElementById('nav-toggle');
     const nav = document.querySelector('nav');
+    const navList = nav.querySelector('ul');
 
     toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
+      const isOpen = navList.classList.toggle('hidden');
+      nav.classList.toggle('open');
+      const isExpanded = nav.classList.contains('open');
+      toggle.setAttribute('aria-expanded', String(isExpanded));
     });
 
     // Close menu when clicking outside
@@ -499,20 +624,21 @@
       const clickInside = nav.contains(e.target) || toggle.contains(e.target);
       if (!clickInside) {
         nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-expanded', 'false');
       }
     });
 
     // Smooth scroll & close menu after clicking a nav link
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href').slice(1);
-        const el=document.getElementById(id);
-        if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'})}
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }) }
         nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
   </script>
 </body>
+
 </html>

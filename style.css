@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-ink font-sans;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1100px] mx-auto px-6;
+  }
+  .btn {
+    @apply inline-block px-[18px] py-3 rounded-full bg-green text-white font-bold transition-transform duration-200 text-center hover:-translate-y-px;
+  }
+  .btn-alt {
+    @apply bg-gold text-ink;
+  }
+  .tag {
+    @apply inline-flex gap-2 items-center bg-lime text-green px-2.5 py-1.5 rounded-full font-bold text-xs tracking-wide;
+  }
+}
